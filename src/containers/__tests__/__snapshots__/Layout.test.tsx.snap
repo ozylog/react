@@ -1,0 +1,163 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Layout /> should render Layout component when title = Menu 1`] = `
+Array [
+  .c0 {
+  background: #ccc;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+}
+
+.c2 {
+  font-size: 23px;
+  font-weight: 500;
+}
+
+.c1 {
+  position: absolute;
+  top: 25px;
+  left: 15xp;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+<header
+    className="c0"
+  >
+    <div
+      className="c1"
+      onClick={[Function]}
+    >
+      <svg
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        style={
+          Object {
+            "color": undefined,
+          }
+        }
+        viewBox="0 0 24 24"
+        width="1em"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <line
+          x1="3"
+          x2="21"
+          y1="12"
+          y2="12"
+        />
+        <line
+          x1="3"
+          x2="21"
+          y1="6"
+          y2="6"
+        />
+        <line
+          x1="3"
+          x2="21"
+          y1="18"
+          y2="18"
+        />
+      </svg>
+    </div>
+    <h1
+      className="c2"
+    >
+      Menu
+    </h1>
+  </header>,
+  .c0 {
+  padding: 20px;
+}
+
+<div
+    className="c0"
+  />,
+]
+`;
+
+exports[`<Layout /> should render Layout component when title = Register card form 1`] = `
+Array [
+  .c0 {
+  background: #ccc;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+}
+
+.c2 {
+  font-size: 23px;
+  font-weight: 500;
+}
+
+.c1 {
+  position: absolute;
+  top: 25px;
+  left: 15xp;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+<header
+    className="c0"
+  >
+    <div
+      className="c1"
+      onClick={[Function]}
+    >
+      <svg
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        style={
+          Object {
+            "color": undefined,
+          }
+        }
+        viewBox="0 0 24 24"
+        width="1em"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <line
+          x1="3"
+          x2="21"
+          y1="12"
+          y2="12"
+        />
+        <line
+          x1="3"
+          x2="21"
+          y1="6"
+          y2="6"
+        />
+        <line
+          x1="3"
+          x2="21"
+          y1="18"
+          y2="18"
+        />
+      </svg>
+    </div>
+    <h1
+      className="c2"
+    >
+      Register card form
+    </h1>
+  </header>,
+  .c0 {
+  padding: 20px;
+}
+
+<div
+    className="c0"
+  />,
+]
+`;

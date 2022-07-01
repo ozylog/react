@@ -19,6 +19,9 @@ const FormContainer = styled.div`
   input {
     margin-top: 10px;
     padding: 5px 7px;
+    border: 1px solid #e5e5e5;
+    border-radius: 3px;
+    -webkit-appearance: none;
   }
 
   button {

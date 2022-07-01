@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Menu /> should render Menu component when isMenuExpanded = true 1`] = `null`;
+
+exports[`<Menu /> should render not Menu component when isMenuExpanded = false 1`] = `null`;

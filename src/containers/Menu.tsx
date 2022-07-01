@@ -8,7 +8,7 @@ import LayoutContext from './../contexts/LayoutContext';
 
 const MenuContainer = styled.div`
   max-width: 500px;
-  min-width: 320px;
+  min-width: 400px;
   position: fixed;
   top: 0;
   left: 0;
