@@ -1,5 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useContextSelector } from 'use-context-selector';
+import { FiMenu } from 'react-icons/fi';
+
+import LayoutContext from './../contexts/LayoutContext';
 
 const Header = styled.header`
   background: #ccc;
@@ -18,13 +22,15 @@ const Title = styled.h1`
 
 interface Props {
   title: string;
-  children: React.ReactNode;
 }
 
-function Layout({ title , children }: Props): React.ReactElement {
+function Layout({ title , children }: React.PropsWithChildren<Props>): React.ReactElement {
+  const showMenu = useContextSelector(LayoutContext, (state) => state.showMenu);
+
   return (
     <>
       <Header>
+        <FiMenu />
         <Title>
           {title}
         </Title>
