@@ -3,10 +3,10 @@ import React from 'react';
 import LayoutContext from './LayoutContext';
 
 function LayoutProvider({ children }: React.PropsWithChildren) {
-  const [showMenu, setShowMenu] = React.useState(false);
+  const [isMenuExpanded, setIsMenuExpanded] = React.useState(false);
 
   return (
-    <LayoutContext.Provider value={{ showMenu, setShowMenu }}>
+    <LayoutContext.Provider value={{ isMenuExpanded, setIsMenuExpanded }}>
       {children}
     </LayoutContext.Provider>
   );

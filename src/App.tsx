@@ -1,13 +1,15 @@
 import React from 'react';
 
-import Layout from './containers/Layout';
-import RegisterCardForm from './components/RegisterCardForm';
+import RegisterCard from './containers/RegisterCard';
+import Menu from './containers/Menu';
+import LayoutProvider from './contexts/LayoutProvider';
 
 function App(): React.ReactElement {
   return (
-    <Layout title='Register card form'>
-      <RegisterCardForm />
-    </Layout>
+    <LayoutProvider>
+        <RegisterCard />
+        <Menu />
+    </LayoutProvider>
   );
 }
 

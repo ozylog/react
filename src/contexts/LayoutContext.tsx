@@ -2,8 +2,8 @@
 import { createContext } from 'use-context-selector';
 
 const LayoutContext = createContext({
-  showMenu: false,
-  setShowMenu: (value: boolean) => {}
+  isMenuExpanded: false,
+  setIsMenuExpanded: (value: boolean) => {}
 });
 
 export default LayoutContext;
