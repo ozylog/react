@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useContextSelector } from 'use-context-selector';
 import styled from 'styled-components';
 
@@ -7,8 +7,7 @@ import Layout from './Layout';
 import LayoutContext from './../contexts/LayoutContext';
 
 const MenuContainer = styled.div`
-  max-width: 500px;
-  min-width: 400px;
+  width: 400px;
   position: fixed;
   top: 0;
   left: 0;
@@ -18,11 +17,32 @@ const MenuContainer = styled.div`
 `;
 
 function Menu(): React.ReactElement | null {
+  const [isMobile, setIsMobile] = useState(false);
   const isMenuExpanded = useContextSelector(LayoutContext, (state) => state.isMenuExpanded);
+
+  const handleResize = () => {
+    if (window.innerWidth < 800 ) {
+      if (!isMobile) setIsMobile(!isMobile);
+    } else {
+      if (isMobile) setIsMobile(!isMobile);
+    }
+  };
+
+
+  React.useEffect(() => {
+    window.addEventListener('resize', handleResize);
+    handleResize();
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  const style = isMobile ? { width: '100%', borderRight: 0 } : undefined;
 
   if (isMenuExpanded) {
     return (
-      <MenuContainer>
+      <MenuContainer style={style}>
         <Layout title='Menu'>
           Menu
         </Layout>

@@ -16,6 +16,7 @@ exports[`<RegisterCardForm /> should render RegisterCardForm component 1`] = `
 }
 
 .c2 input {
+  width: 100%;
   margin-top: 10px;
   padding: 5px 7px;
   border: 1px solid #e5e5e5;
@@ -49,12 +50,7 @@ exports[`<RegisterCardForm /> should render RegisterCardForm component 1`] = `
         onChange={[Function]}
         onFocus={[Function]}
         placeholder="Credit card number"
-        style={
-          Object {
-            "width": "100%",
-          }
-        }
-        type="text"
+        type="number"
         value=""
       />
       <div
@@ -64,34 +60,42 @@ exports[`<RegisterCardForm /> should render RegisterCardForm component 1`] = `
           }
         }
       >
-        <input
-          name="cvc"
-          onBlur={[Function]}
-          onChange={[Function]}
-          onFocus={[Function]}
-          placeholder="CVC"
+        <div
           style={
             Object {
+              "paddingRight": "5px",
               "width": "50%",
             }
           }
-          type="password"
-          value=""
-        />
-        <input
-          name="expiry"
-          onBlur={[Function]}
-          onChange={[Function]}
-          onFocus={[Function]}
-          placeholder="expiry"
+        >
+          <input
+            name="cvc"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            placeholder="CVC"
+            type="number"
+            value=""
+          />
+        </div>
+        <div
           style={
             Object {
+              "paddingLeft": "5px",
               "width": "50%",
             }
           }
-          type="text"
-          value=""
-        />
+        >
+          <input
+            name="expiry"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            placeholder="expiry"
+            type="text"
+            value=""
+          />
+        </div>
       </div>
       <button
         disabled={true}

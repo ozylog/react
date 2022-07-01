@@ -1,12 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-
-import { Form, Field } from 'react-final-form'
+import { Form, Field, FieldRenderProps } from 'react-final-form'
 
 import { Title } from './../StyledComponents';
-
-import { isRequired } from './../utils/validators';
-
+import { isValidNumber, isValidDate } from './../utils/validators';
 
 const Container = styled.div`
   text-align: center;
@@ -17,6 +14,7 @@ const FormContainer = styled.div`
   max-width: 500px;
 
   input {
+    width: 100%;
     margin-top: 10px;
     padding: 5px 7px;
     border: 1px solid #e5e5e5;
@@ -30,6 +28,23 @@ const FormContainer = styled.div`
     padding: 10px;
   }
 `;
+type Props = FieldRenderProps<number, any>;
+const NumberInput: React.FC<Props> = ({ input, meta, ...rest }: Props) => (
+  <>
+    <input {...input} {...rest} type="number" />
+    {meta.error && meta.touched && <div>{meta.error}</div>}
+  </>
+);
+
+const DateInput: React.FC<Props> = ({ input, meta, ...rest }: Props) => (
+  <>
+    <input {...input} {...rest} type="text" />
+    {meta.error && meta.touched && <div>{meta.error}</div>}
+  </>
+);
+
+export const toNumber = (value: any): number | null =>
+    value && !isNaN(value) ? Number(value) : null;
 
 function RegisterCardForm(): React.ReactElement {
 
@@ -44,37 +59,37 @@ function RegisterCardForm(): React.ReactElement {
       </Title>
       <Form
         onSubmit={onSubmit}
-        render={({ handleSubmit, form, submitting, pristine, valid }) => (
+        render={({ handleSubmit, form, submitting, pristine }) => (
           <form onSubmit={handleSubmit}>
             <FormContainer>
               <Field
                 name='creditCard'
-                component='input'
-                type='text'
+                component={NumberInput}
                 placeholder='Credit card number'
-                style={{ width: '100%'}}
-                validate={isRequired}
+                parse={toNumber}
+                validate={isValidNumber}
               />
 
               <div style={{ display: 'flex' }}>
-                <Field
-                  name='cvc'
-                  component='input'
-                  type='password'
-                  placeholder='CVC'
-                  style={{ width: '50%'}}
-                  validate={isRequired}
-                />
-                <Field
-                  name='expiry'
-                  component='input'
-                  type='text'
-                  placeholder='expiry'
-                  style={{ width: '50%'}}
-                  validate={isRequired}
-                />
+                <div style={{ width: '50%', paddingRight: '5px'}}>
+                  <Field
+                    name='cvc'
+                    component={NumberInput}
+                    placeholder='CVC'
+                    parse={toNumber}
+                    validate={isValidNumber}
+                  />
+                </div>
+                <div style={{ width: '50%', paddingLeft: '5px'}}>
+                  <Field
+                    name='expiry'
+                    component={DateInput}
+                    placeholder='expiry'
+                    validate={isValidDate}
+                  />
+                </div>
               </div>
-              <button type="submit" disabled={submitting || pristine || !valid}>
+              <button type="submit" disabled={submitting || pristine}>
                 Submit
               </button>
             </FormContainer>
